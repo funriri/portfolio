@@ -1,0 +1,6 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { profile } from '../data/profile';
+---
+<Layout title="CV — Rejoice Fungai Musiiwa"><article class="cv-page wrap"><div class="eyebrow">CURRICULUM VITAE</div><h1>{profile.name}</h1><p class="cv-title">{profile.title}</p><p>Zimbabwe · <a href={`mailto:${profile.email}`}>{profile.email}</a> · <a href="https://github.com/funriri">GitHub</a></p><button class="button print-cv" type="button">Print / save as PDF</button><section><h2>Experience</h2>{profile.roles.map(role=><article class="cv-role"><h3>{role.title}</h3><p><strong>{role.organization}</strong><br/>{role.dates} · {role.location}</p><ul>{role.contributions.map(point=><li>{point}</li>)}</ul></article>)}</section><section><h2>Education</h2><h3>{profile.education.degree}</h3><p>{profile.education.institution}<br/>{profile.education.dates} · {profile.education.location}</p></section><section><h2>Technical skills</h2><dl>{profile.skills.map(([category,tools])=><div><dt>{category}</dt><dd>{tools}</dd></div>)}</dl></section><section><h2>Languages</h2><p>{profile.languages}</p></section></article></Layout>
+<script>document.querySelector('.print-cv')?.addEventListener('click', () => window.print());</script>
