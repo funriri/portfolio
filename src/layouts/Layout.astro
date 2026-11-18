@@ -1,7 +1,9 @@
 ---
+import '@fontsource-variable/manrope';
+import '@fontsource-variable/fraunces';
 import '../styles/global.css';
 const { title = 'Rejoice Musiiwa — Geospatial & Data Science' } = Astro.props;
 const home = import.meta.env.BASE_URL.replace(/\/$/,'') + '/';
 ---
-<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width"/><meta name="description" content="Rejoice Musiiwa: data scientist working in geospatial analytics, soil mapping, and agricultural software development."/><meta name="theme-color" content="#f7f9f5"/><title>{title}</title></head><body>
+<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width"/><meta name="description" content="Rejoice Musiiwa: data scientist working in geospatial analytics, soil mapping, and agricultural software development."/><meta name="theme-color" content="#f8fafb"/><title>{title}</title></head><body>
 <header><a class="brand" href={home}><b class="monogram">RM<span>.</span></b><span class="brand-copy">REJOICE MUSIIWA<small>Geospatial & data science</small></span></a><nav aria-label="Main navigation"><a href={`${home}#home`}>Home</a><a href={`${home}#about`}>About</a><a href={`${home}#projects`}>Projects</a><a href={`${home}#experience`}>Experience</a><a href={`${home}cv/`}>CV</a><a class="nav-contact" href={`${home}#contact`}>Let’s connect →</a></nav></header><main><slot/></main><footer><a class="monogram" href={home}>RM<span>.</span></a><p>A little curiosity. A spatial perspective.</p><span>Portfolio draft · {new Date().getFullYear()}</span></footer></body></html>
